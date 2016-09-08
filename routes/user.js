@@ -8,5 +8,7 @@ module.exports = function(app){
 	app.get('/user/lista', user.lista);
 	app.get('/user/edit/:id', user.edit);
 	app.post('/user/edit/:id', user.update);
+	app.get('/user/show/:id', user.show);
+	app.post('/user/remove/:id', user.remove);
 
 }

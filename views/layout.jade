@@ -9,7 +9,11 @@ body
 		div(class="container")
 			div(class="navbar-header")
 				a(href="/" class="navbar-brand") Sistema NodeJS
-			div(class="navbar-collapse collapse" id="navbar-main")
+				button(class="navbar-toggle" type="button" data-toggle="collapse"  data-target="navbar-main")
+					span(class="icon-bar")
+					span(class="icon-bar")
+					span(class="icon-bar")
+			div(class="navbar-collapse collapse" id="navbar-main" aria-expanded="false" style="height: 1px;")
 				ul(class="nav navbar-nav")
 					li(class="dropdown")
 						a(href="/user") Usuários

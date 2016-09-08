@@ -34,6 +34,7 @@ module.exports = function(app){
 				if(err){
 					console.log(err);
 				}
+				req.flash('info', 'Usuario cadastrado com sucesso');
 				res.redirect('/user');
 			})
 				
@@ -61,10 +62,30 @@ module.exports = function(app){
 						if(err){
 							console.log(err);
 						}else{
-							res.redirect('/user', );
+							res.redirect('/user');
 						}
 					});
 
+				}
+			});
+		},
+
+		show: function(req,res){
+			User.findById(req.params.id, function(err, data){
+				if(err){
+					console.log(err);
+				}else{
+					res.render('user/show', {value: data});
+				}
+			});
+		},
+
+		remove: function(req,res){
+			User.remove({_id: req.params.id}, function(err, data){
+				if(err){
+					console.log(err);
+				}else{
+					res.redirect('/user');
 				}
 			});
 		},

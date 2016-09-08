@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var flash = require('express-flash');
 
 //var routes = require('./routes/index');
 //var users = require('./routes/users');
@@ -12,6 +13,7 @@ var mongoose = require('mongoose');
 var load = require('express-load');
 
 var app = express();
+
 /*/////MongoDB Conn Projeto*/
 mongoose.connect('mongodb://localhost:27017/waib');
 
@@ -26,6 +28,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Doesn't work flash in express4 in this case
+//to use this https://gist.github.com/brianmacarthur/a4e3e0093d368aa8e423
+/*app.use(express.cookieParser('waibtec'));
+app.use(express.session({ cookie: { maxAge: 60000 }}));
+app.use(flash());
+*/
 
 //load('models').then('controllers').then('routes').into(app);
 
