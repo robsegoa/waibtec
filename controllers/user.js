@@ -34,7 +34,8 @@ module.exports = function(app){
 				if(err){
 					console.log(err);
 				}
-				req.flash('info', 'Usuario cadastrado com sucesso');
+				//Só quando o flash 
+				//req.flash('info', 'Usuario cadastrado com sucesso');
 				res.redirect('/user');
 			})
 				

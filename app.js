@@ -15,7 +15,7 @@ var load = require('express-load');
 var app = express();
 
 /*/////MongoDB Conn Projeto*/
-mongoose.connect('mongodb://localhost:27017/waib');
+mongoose.connect('mongodb://192.168.10.209:27017/waib');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -79,4 +79,4 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-app.listen(3000);
+app.listen(8080);
